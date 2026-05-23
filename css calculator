@@ -1,0 +1,108 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(0, 0, 33);
+    color: white;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.calculator-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Heading text */
+.welcome-text {
+    color: limegreen;
+    font-family: "Times New Roman", serif;
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
+}
+
+/* Calculator box */
+.calculator {
+    background-color: #111;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    border: 2px solid #333;
+}
+
+/* Display screen */
+#display {
+    width: 100%;
+    height: 70px;
+    font-size: 32px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #666;
+    border-radius: 10px;
+    background-color: #000;
+    color: lime;
+    text-align: right;
+    font-family: "Courier New", monospace;
+}
+
+/* Buttons grid */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 70px);
+    gap: 12px;
+}
+
+/* for alll buttons */
+button {
+    width: 70px;
+    height: 70px;
+    font-size: 24px;
+    border: 2px solid #666;
+    border-radius: 12px;
+    background-color: #222;
+    color: #b266ff; /* purple numbers */
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* hover effect */
+button:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+/* Active click effect */
+button:active {
+    transform: scale(0.95);
+}
+
+/* operator buttons */
+button:nth-child(4n),
+button:last-child {
+    color: #00e5ff;
+    font-weight: bold;
+}
+
+/* Top row buttons */
+button:nth-child(-n+4) {
+    color: #ff6666;
+}
+
+/* Zero button spans two columns */
+.zero {
+    grid-column: span 2;
+    width: 152px;
+}

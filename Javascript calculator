@@ -1,0 +1,40 @@
+const display = document.getElementById("display");
+
+// Add value to display
+function appendValue(value) {
+    display.value += value;
+}
+
+// Clear display
+function clearDisplay() {
+    display.value = "";
+}
+
+// Delete last character
+function deleteLast() {
+    display.value = display.value.slice(0, -1);
+}
+
+// Calculate result
+function calculate() {
+    try {
+        // Prevent empty input
+        if (display.value.trim() === "") {
+            display.value = "Invalid Operation";
+            return;
+        }
+
+        // Evaluate expression
+        const result = eval(display.value);
+
+        // Handle invalid results like Infinity or NaN
+        if (result === Infinity || result === -Infinity || isNaN(result)) {
+            display.value = "Invalid Operation";
+        } else {
+            display.value = result;
+        }
+
+    } catch (error) {
+        display.value = "Invalid Operation";
+    }
+}
